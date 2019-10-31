@@ -13,6 +13,35 @@
         <title>100 Boxes</title>
     </head>
     <body>
-        <h1>b</h1>
+        <h1 class="title">CLICK ALL 100 BOXES</h1>
+        <div class="button-holder">
+            <button id="newGame">New Game</button>
+        </div>
+        <div class="canvas-holder">
+            <canvas
+                id="canvasId"
+                class="canvas-element"
+                width="400px"
+                height="400px"
+            ></canvas>
+        </div>
+
+        <div
+            id="modal"
+            class="underlay"
+        >
+            <div
+                class="modal"
+                onclick="event.stopPropagation()"
+            >
+                <h3>End game!</h3>
+                <p>You lost this game.</p>
+                <p>Dou you want to play it again?</p>
+                <div class="modal-button">
+                    <button id="yes">Yes</button>
+                    <button id="no">No</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
