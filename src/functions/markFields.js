@@ -1,9 +1,7 @@
-import { ALL_SQUARES } from '../index';
-
-const markFields = (x, y) => {
-  if (!ALL_SQUARES[x][y].selected) {
-    ALL_SQUARES[x][y].canvas.set('fill', 'rgb(255, 164, 59)');
-    ALL_SQUARES[x][y].marked = true;
+const markFields = (x, y, allSquares) => {
+  if (!allSquares[x][y].selected) {
+    allSquares[x][y].canvas.set('fill', 'rgb(255, 164, 59)');
+    allSquares[x][y].marked = true;
   }
 };
 

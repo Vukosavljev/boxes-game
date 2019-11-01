@@ -1,5 +1,5 @@
 import { fabric } from 'fabric';
-import { UNIT, canvas } from '../index';
+import { UNIT } from '../index';
 
 const propsForLine = () => ({
   stroke: 'black',
@@ -8,12 +8,12 @@ const propsForLine = () => ({
 });
 
 
-const initGrid = () => {
-  canvas.clear();
+const initGrid = (can) => {
+  can.clear();
 
   for (let i = 1; i < 10; i += 1) {
-    canvas.add(new fabric.Line([i * UNIT, 0, i * UNIT, 400], propsForLine()));
-    canvas.add(new fabric.Line([0, i * UNIT, 400, i * UNIT], propsForLine()));
+    can.add(new fabric.Line([i * UNIT, 0, i * UNIT, 400], propsForLine()));
+    can.add(new fabric.Line([0, i * UNIT, 400, i * UNIT], propsForLine()));
   }
 };
 
