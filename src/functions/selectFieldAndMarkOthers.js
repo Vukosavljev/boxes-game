@@ -1,7 +1,7 @@
-import { ALL_SQUARES } from '../globals';
+import { modal, ALL_SQUARES } from '../index';
 import showFreeFields from './showFreeFields';
 import markFields from './markFields';
-import modal from '../index';
+
 
 const selectFieldAndMarkOthers = (el, x, y) => {
   el.set('fill', '#ccc');

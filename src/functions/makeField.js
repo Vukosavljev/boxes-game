@@ -1,5 +1,5 @@
 import { fabric } from 'fabric';
-import UNIT from '../globals';
+import { UNIT } from '../index';
 
 const makeField = (x, y, color = 'white') => (
   new fabric.Rect({

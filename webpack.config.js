@@ -15,7 +15,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
           }
         ]
       },
@@ -24,7 +24,7 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true }
+            options: { minimize: true },
           }
         ]
       },
@@ -33,7 +33,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
     ],
@@ -41,11 +41,11 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
       template: '[name].css',
-      filename: '[id].css'
-    })
-  ]
+      filename: '[id].css',
+    }),
+  ],
 };

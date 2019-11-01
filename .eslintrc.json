@@ -16,7 +16,7 @@
 	},
 	"rules": {
 		"linebreak-style": 0,
-		"semi": 2,
+		"semi": "error",
 		"indent": [
 			"error",
 			2

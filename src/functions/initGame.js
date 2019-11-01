@@ -1,15 +1,45 @@
 import {
-  UNIT,
-  ALL_SQUARES,
   canvas,
+  UNIT,
   FIRST_TIME,
-} from '../globals';
+  ALL_SQUARES,
+} from '../index';
+import registerHover from './registerHover';
+import selectFieldAndMarkOthers from './selectFieldAndMarkOthers';
 import makeField from './makeField';
+import removeMarks from './removeMarks';
 import initGrid from './initGrid';
-import registeClick from './registerClick';
 
-function initGame() {
-  FIRST_TIME = true;
+const registeClick = () => {
+  canvas.on('mouse:down', (event) => {
+    const element = event.target;
+    const coorX = element.left / UNIT;
+    const coorY = element.top / UNIT;
+    console.log(FIRST_TIME);
+    if (FIRST_TIME) {
+      console.log('sec')
+      selectFieldAndMarkOthers(element, coorX, coorY);
+      registerHover(coorX, coorY);
+      FIRST_TIME = false;
+      return;
+    }
+
+    if (ALL_SQUARES.every((num) => num.every((n) => n.selected === true))) {
+      alert('Congratulation, you clicked all 100 boxes successfully!');
+    }
+
+    if (ALL_SQUARES[coorX][coorY].marked) {
+      removeMarks();
+      selectFieldAndMarkOthers(element, coorX, coorY);
+    }
+  });
+
+  canvas.renderAll();
+};
+
+
+const initGame = () => {
+  FIRST_TIME = false;
   initGrid();
   ALL_SQUARES = [];
 
@@ -27,8 +57,8 @@ function initGame() {
       canvas.add(ALL_SQUARES[i][j].canvas);
     }
   }
-  registeClick();
-}
 
+  registeClick();
+};
 
 export default initGame;

@@ -1,5 +1,5 @@
-import fabric from 'fabric';
-import { UNIT, canvas } from '../globals';
+import { fabric } from 'fabric';
+import { UNIT, canvas } from '../index';
 
 const propsForLine = () => ({
   stroke: 'black',

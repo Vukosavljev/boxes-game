@@ -1,4 +1,4 @@
-import { ALL_SQUARES } from '../globals';
+import { ALL_SQUARES } from '../index';
 
 const markFields = (x, y) => {
   if (!ALL_SQUARES[x][y].selected) {

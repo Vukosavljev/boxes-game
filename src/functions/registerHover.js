@@ -1,4 +1,4 @@
-import { UNIT, ALL_SQUARES, canvas } from '../globals';
+import { UNIT, canvas, ALL_SQUARES } from '../index';
 
 function setColor(e, color) {
   const el = e.target;

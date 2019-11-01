@@ -1,7 +1,19 @@
+// eslint-disable-next-line import/no-cycle
+import { fabric } from 'fabric';
+import { initGame } from './functions/initGame';
 import './main.scss';
-import initGame from './functions/initGame';
+
 
 const modal = document.getElementById('modal');
+const UNIT = 40;
+// eslint-disable-next-line import/no-mutable-exports
+let FIRST_TIME = true;
+let ALL_SQUARES = [];
+
+fabric.Object.prototype.selectable = false;
+const canvas = new fabric.Canvas('canvasId');
+canvas.hoverCursor = 'pointer';
+canvas.selection = false;
 
 function closeModal() {
   modal.style.display = 'none';
@@ -17,4 +29,10 @@ document.getElementById('yes').addEventListener('click', () => {
 
 initGame();
 
-export default modal;
+export {
+  modal,
+  UNIT,
+  canvas,
+  FIRST_TIME,
+  ALL_SQUARES,
+};
